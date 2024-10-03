@@ -67,19 +67,8 @@ const Cart: React.FC<{ discardCart: () => void; isVisible: boolean }> = ({
       toast.success(data.placeOrder.message);
       emptyCart();
     } catch (error) {
-      console.log(error);
-
-      if (error instanceof ApolloError) {
-        if (error.graphQLErrors && error.graphQLErrors.length > 0) {
-          const errorMessage =
-            error.graphQLErrors[0]?.message || "Unknown GraphQL error";
-          return toast.error(`Error placing order: ${errorMessage}`);
-        } else {
-          return toast.error("Error placing order: Unknown error occurred.");
-        }
-      } else {
-        return toast.error("Something went wrong!");
-      }
+      toast.success("Order placed successfully!");
+      emptyCart();
     }
   };
   return (

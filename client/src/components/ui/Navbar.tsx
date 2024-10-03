@@ -38,7 +38,7 @@ const Navbar = () => {
       }
     }
   }, [loading, error, data]);
-  
+
   if (loading)
     return (
       <div className="w-screen h-screen flex justify-center items-center">
@@ -70,10 +70,7 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <Link
-        to="/"
-        className="flex col-span-1 h-full justify-center items-center"
-      >
+      <div className="flex col-span-1 h-full justify-center items-center">
         <svg
           width="41"
           height="41"
@@ -121,7 +118,7 @@ const Navbar = () => {
             </clipPath>
           </defs>
         </svg>
-      </Link>
+      </div>
       <div className="flex justify-end items-center col-span-1 w-full h-full relative">
         <Cart isVisible={cartToggle} discardCart={() => toggleCart()} />
         <button

@@ -10,10 +10,7 @@ import {
 import { BrowserRouter as Router } from "react-router-dom";
 
 const client = new ApolloClient({
-  uri:
-    process.env.APP_ENV === "prod"
-    ? "/graphql"
-      : "http://localhost:8000/graphql",
+  uri: "/graphql",
   cache: new InMemoryCache({
     typePolicies: {
       AttributeSet: {
