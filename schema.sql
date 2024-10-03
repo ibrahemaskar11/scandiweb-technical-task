@@ -1,6 +1,6 @@
--- DROP DATABASE IF EXISTS u947154701_test;
--- CREATE DATABASE u947154701_test;
-USE u947154701_test;
+DROP DATABASE IF EXISTS scandiweb_fullstack_task;
+CREATE DATABASE scandiweb_fullstack_task;
+USE scandiweb_fullstack_task;
 
 -- CREATING TABLES --
 

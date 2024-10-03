@@ -21,9 +21,31 @@ $dotenv->load();
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/hello', function () {
-        $products = Product::filterByCategory('clothes');
-        //view products as json
-        return json_encode($products);
+        //create an order like in the order resolver
+        $order = Order::create([
+            "total" => 1234,
+            "currency_id" => "USD",
+        ], [
+            "id" => "apple-imac-2021",
+            "quantity" => 2,
+            "paid_amonut" => 1234,
+            "paid_currency" => "USD",
+            "selected_attributes" => [
+                [
+                    "id" => "Capacity",
+                    "value" => "256GB"
+                ],
+                [
+                    "id" => "Touch ID in keyboard",
+                    "value" => "No"
+                ],
+                [
+                    "id" => "With USB 3 ports",
+                    "value" => "No"
+                ]
+            ]
+        ]);
+        return json_encode($order);
     });
     $r->addRoute('POST', '/graphql', [App\GraphQL\Controller::class, 'handle']);
 });

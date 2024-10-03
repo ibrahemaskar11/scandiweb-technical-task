@@ -1,4 +1,4 @@
-USE u947154701_test;
+USE scandiweb_fullstack_task;
 
 -- CATEGORIES
 
